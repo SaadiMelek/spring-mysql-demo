@@ -1,0 +1,45 @@
+#version: '3.8'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: exchange-rate-db
+      #MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      retries: 5
+      start_period: 30s
+      timeout: 10s
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql  # Volume configuration for MySQL data
+    networks:
+      - spring-mysql-network
+  spring-mysql-demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: spring-mysql-demo-container
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/exchange-rate-db?createDatabaseIfNotExist=true&characterEncoding=UTF-8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+    networks:
+      - spring-mysql-network
+
+networks:
+  spring-mysql-network:
+    driver: bridge
+
+volumes:
+  mysql-data:  # Define a named volume for MySQL data persistence
