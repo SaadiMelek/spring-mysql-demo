@@ -1,0 +1,62 @@
+docker pull mysql:latest
+
+docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 mysql:latest
+
+docker ps
+
+docker stop mysql-container
+
+cd C:\workspace\spring-mysql-demo
+
+docker build -t spring-mysql-demo:latest .
+
+docker images
+
+docker-compose up -d
+
+download minikube : https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download
+
+minikube start
+
+kubectl get po -A
+
+minikube kubectl -- get po -A
+
+# to see web dashboard :
+minikube dashboard
+
+
+see documentation : https://minikube.sigs.k8s.io/docs/handbook/kubectl/
+
+# add helm to path
+
+# create configuration directory
+helm create spring-mysql-demo-dir
+
+# minikube cluster
+minikube start --driver=docker
+
+# see all the config
+helm template spring-mysql-demo-dir/
+
+eval $(minikube docker-env) ??? SET ENV VARS then use this : & minikube docker-env | Invoke-Expression
+
+docker build -t spring-mysql-demo:latest .
+
+helm install mychart spring-mysql-demo-dir
+
+kubectl get all		==>	RESULT = 2 pods & 2 services & deployment & replicaset
+
+kubectl get services
+
+#connect to mysql service
+minikube service mychart-mysql-service --url
+
+# to access to LoadBalancer service mychart-spring-app-service (access the app endpoints via browser or postman [http://localhost:8080//addExchangeRate , http://localhost:8080//getAmount ...]):
+minikube tunnel
+
+# to see app logs :
+kubectl get pods
+then 
+kubectl logs -f mychart-spring-app-deployment-7f8947c947-w2rzd
+mychart-spring-app-deployment-7f8947c947-w2rzd IS the PDO name
