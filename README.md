@@ -1,12 +1,17 @@
 # Prerequisites
 ◆ Docker
   • https://docs.docker.com/engine/install/
+  
 ◆ kubectl
   • https://kubernetes.io/docs/tools/
+  
 ◆ IDE and JDK
+
 ◆ MySQL Client (e.g. DBeaver)
+
 ◆ Minikube
   • https://minikube.sigs.k8s.io/docs/start/
+
 ◆ Helm
   • https://helm.sh/docs/intro/install/
 
