@@ -15,6 +15,16 @@
 ◆ Helm
   • https://helm.sh/docs/intro/install/
 
+◆
+
+![1](https://github.com/user-attachments/assets/2aa9e3bd-15d6-41c3-a651-f757d6e6d7b6)
+
+◆
+
+![2](https://github.com/user-attachments/assets/e516ff43-c0c2-4e81-ae87-4f0ee044c720)
+
+◆
+
 ![7](https://github.com/user-attachments/assets/3df0f914-0583-4384-873d-ee10e9cf95be)
 
 ◆
