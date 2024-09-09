@@ -60,3 +60,56 @@ kubectl get pods
 then 
 kubectl logs -f mychart-spring-app-deployment-7f8947c947-w2rzd
 mychart-spring-app-deployment-7f8947c947-w2rzd IS the PDO name
+
+
+
+
+######################################################################################
+
+
+10 commandes Docker et docker compose à connaître
+
+↳ Enregistre ce post 👇
+
+Si tu es un développeur, maîtriser Docker et docker compose est indispensable pour gagner en efficacité. Ces 10 commandes te permettront de gérer tes conteneurs et tes configurations comme un pro.
+
+1- docker ps
+↳ Liste les conteneurs actifs. Parfait pour vérifier rapidement ce qui tourne sur ton environnement.
+
+2- docker exec -it <container_id> bash
+↳ Accède à un conteneur en cours d'exécution. Idéal pour déboguer directement à l'intérieur du conteneur.
+
+3- docker logs <container_id>
+↳ Consulte les logs d'un conteneur. Essentiel pour diagnostiquer des problèmes en cours de route.
+
+4- docker stop $(docker ps -q)
+↳ Arrête tous les conteneurs en une seule commande. Pratique pour libérer des ressources rapidement.
+
+5- docker rm $(docker ps -a -q)
+↳ Supprime tous les conteneurs arrêtés. Indispensable pour garder ton environnement propre.
+
+6- docker compose up -d
+↳ Démarre tes services en arrière-plan. Parfait pour lancer ton application sans bloquer ton terminal.
+
+7- docker compose down
+↳ Arrête et supprime tous les conteneurs, réseaux, volumes définis dans ton docker-compose. Idéal pour repartir sur une base propre.
+
+8- docker build -t <image_name> .
+↳ Crée une nouvelle image Docker à partir d'un Dockerfile. Essentiel pour déployer tes applications.
+
+9- docker compose logs -f
+↳ Affiche les logs de tous les services en temps réel. Utile pour surveiller ton application après le lancement.
+
+10- docker system prune
+↳ Nettoie les images, conteneurs, volumes inutilisés. Indispensable pour libérer de l'espace disque.
+
+Le succès réside dans la maîtrise des outils.
+Exploite ces commandes pour optimiser ton workflow.
+
+Quelles sont tes commandes Docker préférées?
+
+___________ Tu as aimé ce post ? 👇
+
+Hello, moi c’est Damien 🧊, je transforme vos idées en solutions web performantes.
+
+Ce post t'a plu ? Un petit like 👍, un commentaire de soutien 💬, ou même un partage 🔁 serait vraiment top
